@@ -27,7 +27,7 @@
             tab_powerline_style = "slanted";
             foreground = "${inputs.theme.fgcolour}";
             background = "${inputs.theme.bgcolour}";
-            background_opacity = "0.65";
+            background_opacity = "0.8";
             color0 = "${inputs.theme.color0}";
             color8 = "${inputs.theme.color8}";
             color1 = "${inputs.theme.color1}";

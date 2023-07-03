@@ -40,8 +40,11 @@
             bemenu 
             swaybg
             libnotify
+            xdg-utils
 
             # GUI
+            firefox
+            thunderbird
             discord
             spotify
 
@@ -59,8 +62,6 @@
         waybar.enable = true;
 
         # GUI
-        firefox.enable = true; 
-        thunderbird.enable = true;
         zathura.enable = true;
         imv.enable = true;
         mpv.enable = true;

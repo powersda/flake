@@ -138,7 +138,7 @@
                 backlight = {
                     device = "intel_backlight";
                     format = "{icon} {percent}%";
-                    format-icons = ["" ""];
+                    format-icons = ["󰹐" "󱩎" "󱩏" "󱩐" "󱩑" "󱩒" "󱩓" "󱩔" "󱩕" "󱩖" "󰛨"];
                 };
 
                 "clock#time" = {
@@ -154,9 +154,9 @@
                 network = {
                     interval = 5;
                     format-wifi = "  {essid} ({signalStrength}%)"; #// Icon: wifi
-                    format-ethernet = "  {ipaddr}/{cidr}"; #// Icon: ethernet
+                    format-ethernet = "󰈀  {ipaddr}/{cidr}"; #// Icon: ethernet
                     format-disconnected = "⚠  Disconnected";
-                    tooltip-format = "{ifname}: {ipaddr}";
+                    #tooltip-format = "{ifname}: {ipaddr}";
                 };
 
                 "wlr/workspaces" = {
@@ -166,7 +166,7 @@
                     on-click = "activate";
                     format-icons = {
                       "8" = "";
-                      "9" = "";
+                      "9" = "󰶍";
                       "10" = "";
                     };
                 };
