@@ -18,7 +18,7 @@
         enable = true;
         userDirs.enable = true;
         # userDirs.createDirectories = true;
-        userDirs.desktop = "$HOME/desktop";
+        userDirs.desktop = "$HOME";
         userDirs.documents = "$HOME";
         userDirs.download = "$HOME/downloads";
         userDirs.music = "$HOME/music";

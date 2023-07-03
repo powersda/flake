@@ -38,7 +38,7 @@
                     "custom/notifications"
                     "bluetooth"
                     # "custom/pacman"
-                    "custom/vpn"
+                    # "custom/vpn"
                     "network"
                     "backlight"
                     "custom/microphone" 
@@ -156,7 +156,8 @@
                     format-wifi = "  {essid} ({signalStrength}%)"; #// Icon: wifi
                     format-ethernet = "󰈀  {ipaddr}/{cidr}"; #// Icon: ethernet
                     format-disconnected = "⚠  Disconnected";
-                    #tooltip-format = "{ifname}: {ipaddr}";
+                    format-linked =  "󰈀  {ifname}"; 
+                    tooltip-format = "{ifname}: {ipaddr}";
                 };
 
                 "wlr/workspaces" = {

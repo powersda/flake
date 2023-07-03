@@ -99,16 +99,27 @@
             pulse.enable = true;
             alsa.enable = true;
         };
+        openvpn.servers = {
+            ca_montreal = {
+                config = "config /etc/openvpn/client/ca_montreal.ovpn";
+                autoStart = false;
+                updateResolvConf = true;
+                up = "sudo -u pwrhs pkill -SIGRTMIN+11 waybar";
+                down = "sudo -u pwrhs pkill -SIGRTMIN+11 waybar";
+            };
+        };
     };
 
     # PACKAGES
     environment.systemPackages = with pkgs; [
+        nvi
         wget
         curl
         dig
         whois
         killall
         powertop
+        unzip
     ];
 
     # NIX
