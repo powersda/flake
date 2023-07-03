@@ -44,6 +44,9 @@
             libnotify
             xdg-utils
             swaylock-effects
+            grim
+            slurp
+            wl-clipboard
 
             # GUI
             firefox

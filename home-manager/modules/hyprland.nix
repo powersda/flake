@@ -141,8 +141,8 @@
             bind = $mainMod_CTRL_SHIFT, q, exit, 
             bind = $mainMod_CTRL_SHIFT, r, forcerendererreload, 
             bind = $mainMod, v, togglefloating, 
-            bind = $mainMod, s, exec, GRIM_DEFAULT_DIR=~/screenshots/ grim && notify-send -i /usr/share/icons/Adwaita/48x48/devices/camera-photo-symbolic.symbolic.png "Screenshot Taken!"
-            bind = $mainMod_SHIFT, s, exec, grim -g "$(slurp)" - | wl-copy && notify-send -i /usr/share/icons/Adwaita/48x48/devices/camera-photo-symbolic.symbolic.png "Screensnip sent to clipboard!"
+            bind = $mainMod, s, exec, GRIM_DEFAULT_DIR=~/screenshots/ grim && notify-send "Screenshot Taken!"
+            bind = $mainMod_SHIFT, s, exec, (slurp | xargs -I % grim -g % - | wl-copy) && [[ "$(wl-paste)" ]] && notify-send "Screensnip sent to clipboard!"
             bind = $mainMod, semicolon, exec, swaylock --screenshots --effect-blur 7x5 --fade-in 0.2 -u
             # bind = $mainMod, o, pseudo, # dwindle
             bind = $mainMod, t, togglesplit, # dwindle

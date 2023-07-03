@@ -72,6 +72,13 @@
     security.pam.services = {
         swaylock.text = "auth include login";
     };
+
+    # POWER
+    powerManagement = {
+        enable = true;
+        powertop.enable = true;
+    };
+
     
     # MODULES
     programs = {
@@ -85,6 +92,7 @@
 
     # SERVICES
     services = {
+        tlp.enable = true;
         pipewire = {
             enable = true;
             audio.enable = true;
@@ -100,6 +108,7 @@
         dig
         whois
         killall
+        powertop
     ];
 
     # NIX
