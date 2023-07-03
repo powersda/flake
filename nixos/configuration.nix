@@ -120,6 +120,7 @@
         killall
         powertop
         unzip
+        gcc
     ];
 
     # NIX
