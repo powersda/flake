@@ -65,6 +65,7 @@
     # MODULES
     programs = {
         light.enable = true;
+        htop.enable = true;
         hyprland = {
             enable = true;
             package = inputs.hyprland.packages.${inputs.system}.hyprland;
@@ -85,6 +86,10 @@
     # PACKAGES
     environment.systemPackages = with pkgs; [
         wget
+        curl
+        dig
+        nslookup
+        whois
         killall
     ];
 

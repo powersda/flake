@@ -16,14 +16,16 @@
 
     xdg = {
         enable = true;
-        userDirs.desktop = "~/desktop";
-        userDirs.documents = "~";
-        userDirs.download = "~/downloads";
-        userDirs.music = "~/music";
-        userDirs.pictures = "~/pictures";
-        userDirs.videos = "~/videos";
-        userDirs.templates = "~/templates";
-        userDirs.publicShare = "~/public";
+        userDirs.enable = true;
+        # userDirs.createDirectories = true;
+        userDirs.desktop = "$HOME/desktop";
+        userDirs.documents = "$HOME";
+        userDirs.download = "$HOME/downloads";
+        userDirs.music = "$HOME/music";
+        userDirs.pictures = "$HOME/pictures";
+        userDirs.videos = "$HOME/videos";
+        userDirs.templates = "$HOME/templates";
+        userDirs.publicShare = "$HOME/public";
     };
 
     home = { 
@@ -47,6 +49,7 @@
             thunderbird
             discord
             spotify
+            obsidian
 
             # TERMINAL
             playerctl
@@ -54,6 +57,8 @@
             cmus
             cava
             tty-clock
+            cmatrix
+            cbonsai
         ];
     };
 
