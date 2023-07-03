@@ -11,6 +11,7 @@
         ./modules/zathura.nix
         ./modules/hyprland.nix
         ./modules/git.nix
+        ./modules/gh.nix
     ];
 
     xdg = {
