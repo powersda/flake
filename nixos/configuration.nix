@@ -46,6 +46,12 @@
         powerOnBoot = false;
     };
 
+    # SWAP
+    swapDevices = [{
+        device = "/var/lib/swapfile";
+        size = 8 * 1024;
+    }];
+
     # USER
     users = {
         users.pwrhs.isNormalUser = true;
@@ -61,6 +67,11 @@
     fonts.fonts = with pkgs; [
         (nerdfonts.override { fonts = [ "Ubuntu" "Hack" ]; })
     ];
+
+    # SECURITY
+    security.pam.services = {
+        swaylock.text = "auth include login";
+    };
     
     # MODULES
     programs = {
@@ -73,7 +84,6 @@
     };
 
     # SERVICES
-    # services.openssh.enable = true;
     services = {
         pipewire = {
             enable = true;
@@ -88,7 +98,6 @@
         wget
         curl
         dig
-        nslookup
         whois
         killall
     ];
@@ -104,9 +113,5 @@
     # Virtd
     # gnupg
     # IRC
-    # thunderbird
-
-
-
 }
 

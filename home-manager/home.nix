@@ -43,6 +43,7 @@
             swaybg
             libnotify
             xdg-utils
+            swaylock-effects
 
             # GUI
             firefox
