@@ -60,6 +60,7 @@
 
         # GUI
         firefox.enable = true; 
+        thunderbird.enable = true;
         zathura.enable = true;
         imv.enable = true;
         mpv.enable = true;
