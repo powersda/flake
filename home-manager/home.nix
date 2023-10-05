@@ -17,8 +17,8 @@
     xdg = {
         enable = true;
         userDirs.enable = true;
-        # userDirs.createDirectories = true;
-        userDirs.desktop = "$HOME";
+        userDirs.createDirectories = false;
+        userDirs.desktop = "$HOME/desktop";
         userDirs.documents = "$HOME";
         userDirs.download = "$HOME/downloads";
         userDirs.music = "$HOME/music";
@@ -63,6 +63,7 @@
             tty-clock
             cmatrix
             cbonsai
+            spotify-tui
         ];
     };
 
@@ -86,5 +87,20 @@
 
     services = {
         dunst.enable = true;
+        spotifyd.enable = true;
+    };
+
+    gtk = {
+        enable = true;
+        cursorTheme.name = "Dracula-cursors";
+        cursorTheme.package = pkgs.dracula-theme;
+        cursorTheme.size = 16;
+        font.name = "Ubuntu Nerd Font";
+        # font.package = 
+        # font.size = 
+        theme.name = "Dracula";
+        theme.package = pkgs.dracula-theme;
+        iconTheme.name = "Papirus-Dark";
+        iconTheme.package = pkgs.papirus-icon-theme;
     };
 }

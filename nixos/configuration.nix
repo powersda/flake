@@ -64,13 +64,19 @@
     i18n.defaultLocale = "en_US.UTF-8";
 
     # FONTS
-    fonts.fonts = with pkgs; [
+    fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "Ubuntu" "Hack" ]; })
     ];
 
     # SECURITY
-    security.pam.services = {
-        swaylock.text = "auth include login";
+    security = {
+        pam.services = {
+            swaylock.text = "auth include login";
+        };
+        sudo = {
+            enable = true;
+            wheelNeedsPassword = false;
+        };
     };
 
     # POWER
@@ -104,8 +110,14 @@
                 config = "config /etc/openvpn/client/ca_montreal.ovpn";
                 autoStart = false;
                 updateResolvConf = true;
-                up = "sudo -u pwrhs pkill -SIGRTMIN+11 waybar";
-                down = "sudo -u pwrhs pkill -SIGRTMIN+11 waybar";
+                up = ''
+                    su pwrhs
+                    ${pkgs.procps}/bin/pkill -SIGRTMIN+11 waybar
+                '';
+                down = ''
+                    su pwrhs
+                    ${pkgs.procps}/bin/pkill -SIGRTMIN+11 waybar
+                '';
             };
         };
     };

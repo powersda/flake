@@ -38,7 +38,7 @@
                     "custom/notifications"
                     "bluetooth"
                     # "custom/pacman"
-                    # "custom/vpn"
+                    "custom/vpn"
                     "network"
                     "backlight"
                     "custom/microphone" 
@@ -250,10 +250,12 @@
             
             #battery.warning {
                 color: orange;
+                background: ${inputs.theme.bgcolour};
             }
             
             #battery.critical {
                 color: red;
+                background: ${inputs.theme.bgcolour};
             }
             
             #battery.warning.discharging {

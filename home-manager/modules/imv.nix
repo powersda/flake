@@ -58,7 +58,7 @@
                 "a" = "zoom actual";
                 "r" = "reset";
                 # w = exec cp $imv_current_file $(dirname $imv_current_file)/current.png && hyprctl hyprpaper preload $imv_current_file && hyprctl hyprpaper wallpaper ,$imv_current_file
-                "w" = "exec cp $imv_current_file $(dirname $imv_current_file)/current && killall swaybg && nohup swaybg -i $imv_current_file &";
+                "w" = "exec cp $imv_current_file $(dirname $imv_current_file)/current && killall swaybg && nohup swaybg -i $imv_current_file --mode fill &";
                 
                 # Gif playback
                 "<period>" = "next_frame";

@@ -15,14 +15,15 @@
             # monitor = HDMI-A-1, 1920x1080@60, 0x0, 1, mirror, eDP-1
             monitor = , preferred, auto, 1
             
-            # bindl = , switch:on:Lid Switch, exec, hyprctl keyword monitor eDP-1, disable
-            # bindl = , switch:off:Lid Switch, exec, hyprctl keyword monitor eDP-1, preferred, auto, 1
+            # bindl = ,switch:on:Lid Switch, exec, hyprctl keyword monitor eDP-1, disable
+            # bindl = ,switch:off:Lid Switch, exec, hyprctl keyword monitor eDP-1, preferred, auto, 1
             # bindl = , switch:off:Lid Switch, exec, killall -SIGUSR2 waybar 
             
             # See https://wiki.hyprland.org/Configuring/Keywords/ for more
             
             exec-once = [workspace special silent] kitty
-            exec-once = waybar & swaybg -i /home/pwrhs/wallpapers/current 
+            exec-once = waybar & swaybg -i /home/pwrhs/wallpapers/current --mode fill
+            exec-once = hyprctl setcursor Dracula-cursors 16
             
             # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
             input {
@@ -126,6 +127,7 @@
             windowrulev2 = opacity 1.0, class:^(thunderbird)$
             windowrulev2 = float, class:^(thunderbird)$, title:^(Write:)
             windowrulev2 = workspace 10, class:^(discord)$
+            windowrulev2 = workspace 10, class:^("Microsoft Teams - Preview")$
             windowrulev2 = workspace 10, class:^(Slack)$
             
             #Binds
@@ -152,7 +154,7 @@
             bind = $mainMod, return, exec, kitty
             bind = , print, exec, kitty
             bind = $mainMod, d, exec, bemenu-run -p "Run:"
-            bind = $mainMod, c, exec, ~/.local/vpn_select && pkill -SIGRTMIN+11 waybar
+            bind = $mainMod, c, exec, ~/.local/bin/vpn_select &> /home/pwrhs/TEST && pkill -SIGRTMIN+11 waybar &> /home/pwrhs/TEST
             
             # Monitors
             bind = $mainMod, period, focusmonitor, +1

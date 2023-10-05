@@ -2,7 +2,7 @@
 {
     programs.gh= {
         enable = true;
-        enableGitCredentialHelper = true;
+        gitCredentialHelper = true;
         settings.editor = "nvim";
     };
 }
