@@ -78,10 +78,6 @@
                 # See https://wiki.hyprland.org/Configuring/Variables/ for more
             
                 rounding = $rounding
-                blur = yes
-                blur_size = 5
-                blur_passes = 1
-                blur_new_optimizations = on
             
                 drop_shadow = true
                 shadow_range = 6
@@ -90,6 +86,14 @@
             
                 dim_inactive = true
                 dim_strength = 0.15
+
+                blur {
+                    enabled = true
+                    size = 5
+                    passes = 1
+                    ignore_opacity = false
+                    new_optimizations = true
+                }
             }
             
             animations {
@@ -154,7 +158,8 @@
             bind = $mainMod, return, exec, kitty
             bind = , print, exec, kitty
             bind = $mainMod, d, exec, bemenu-run -p "Run:"
-            bind = $mainMod, c, exec, ~/.local/bin/vpn_select &> /home/pwrhs/TEST && pkill -SIGRTMIN+11 waybar &> /home/pwrhs/TEST
+            bind = $mainMod, c, exec, ~/.local/bin/vpn_select &> /dev/null && pkill -SIGRTMIN+11 waybar &> /home/pwrhs/TEST
+            bind = $mainMod, k, exec, ~/.local/bin/vm_select & /dev/null 
             
             # Monitors
             bind = $mainMod, period, focusmonitor, +1

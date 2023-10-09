@@ -15,6 +15,8 @@
                 "$git_state"
                 "$git_status"
                 "$line_break"
+                "$python"
+                "$nix_shell"
                 "$character"
             ];
             #add_newline = false;
@@ -49,6 +51,7 @@
                 truncation_length = 0;
                 truncate_to_repo = true;
             };
+
         };
     };
 }

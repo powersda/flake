@@ -25,7 +25,7 @@
                 height = 30;
 
                 modules-left = [
-                    "wlr/workspaces"
+                    "hyprland/workspaces"
                     "hyprland/window"
                 ];
 
@@ -57,6 +57,24 @@
                     separate-outputs = true;
                 };
 
+                "hyprland/workspaces" = {
+                    active-only = false;
+                    all-outputs = true;
+                    format = "{icon}";
+                    sort-by = "number";
+                    format-icons = {
+                      "1" = "1";
+                      "2" = "2";
+                      "3" = "3";
+                      "4" = "4";
+                      "5" = "5";
+                      "6" = "6";
+                      "7" = "7";
+                      "8" = "";
+                      "9" = "󰶍";
+                      "10" = "";
+                    };
+                };
                 "custom/vpn" = {
                     format = "{}";
                     interval = "once";
@@ -160,17 +178,6 @@
                     tooltip-format = "{ifname}: {ipaddr}";
                 };
 
-                "wlr/workspaces" = {
-                    all-outputs = false;
-                    format = "{icon}";
-                    sort-by-number = true;
-                    on-click = "activate";
-                    format-icons = {
-                      "8" = "";
-                      "9" = "󰶍";
-                      "10" = "";
-                    };
-                };
 
                 pulseaudio = {
                     #//"scroll-step": 1

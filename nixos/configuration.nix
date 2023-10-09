@@ -1,6 +1,6 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
+
 
 { config, pkgs, ... }@inputs:
 
@@ -55,7 +55,7 @@
     # USER
     users = {
         users.pwrhs.isNormalUser = true;
-        users.pwrhs.extraGroups = [ "wheel" "video"];
+        users.pwrhs.extraGroups = [ "wheel" "video" "libvirtd"];
         users.pwrhs.initialPassword = "password";
     };
 
@@ -105,9 +105,9 @@
             pulse.enable = true;
             alsa.enable = true;
         };
-        openvpn.servers = {
-            ca_montreal = {
-                config = "config /etc/openvpn/client/ca_montreal.ovpn";
+        openvpn.servers = builtins.foldl' (acc: file: acc // {
+            ${file} = {
+                config = "config /etc/openvpn/client/${file}.ovpn";
                 autoStart = false;
                 updateResolvConf = true;
                 up = ''
@@ -119,7 +119,8 @@
                     ${pkgs.procps}/bin/pkill -SIGRTMIN+11 waybar
                 '';
             };
-        };
+        }) {} (import ./vpn_locations.nix) 
+;
     };
 
     # PACKAGES
@@ -129,11 +130,18 @@
         curl
         dig
         whois
+        file
         killall
         powertop
         unzip
+        p7zip
         gcc
+        python312
+        virt-manager
     ];
+
+    # VIRTUALIZATION
+    virtualisation.libvirtd.enable = true;
 
     # NIX
     nix = {
@@ -142,8 +150,6 @@
     };
     
 
-    # TODO:
-    # Virtd
     # gnupg
     # IRC
 }
