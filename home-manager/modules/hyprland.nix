@@ -158,8 +158,8 @@
             bind = $mainMod, return, exec, kitty
             bind = , print, exec, kitty
             bind = $mainMod, d, exec, bemenu-run -p "Run:"
-            bind = $mainMod, c, exec, ~/.local/bin/vpn_select &> /dev/null && pkill -SIGRTMIN+11 waybar &> /home/pwrhs/TEST
-            bind = $mainMod, k, exec, ~/.local/bin/vm_select & /dev/null 
+            bind = $mainMod, c, exec, ~/.local/bin/vpn_select &> /dev/null && pkill -SIGRTMIN+11 waybar
+            bind = $mainMod, k, exec, ~/.local/bin/vm_select &> /dev/null 
             
             # Monitors
             bind = $mainMod, period, focusmonitor, +1

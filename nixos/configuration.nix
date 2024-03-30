@@ -131,6 +131,7 @@
         dig
         whois
         file
+        tree
         killall
         powertop
         unzip

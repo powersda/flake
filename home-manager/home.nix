@@ -64,6 +64,13 @@
             cmatrix
             cbonsai
             spotify-tui
+
+            #LANGUAGE SERVERS
+            nil
+            lua-language-server
+            nodePackages_latest.pyright
+            nodePackages_latest.bash-language-server
+
         ];
     };
 
